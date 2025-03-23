@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --purple: #7f46ff;
+
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+}
+
+@font-face {
+  font-family: "Roxborough";
+  src: url("/public/fonts/Roxborough\ CF.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/****************** cursor *********************/
+.cursor-ball {
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: var(--purple);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%) scale(0.1);
+}
+
+.cursor-text {
+  color: white;
+  font-size: 17px;
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+  text-align: center;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+/***************** navbar *********************/
+.nav_component {
+  width: 100vw;
+  padding: 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  background-color: var(--black);
+  color: var(--white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.nav_component img {
+  width: 180px;
+}
+
+.nav_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.nav_menu {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/************************** hero  **************************/
+
+.section_hero {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee_content h1 {
+  color: var(--white);
+  font-size: 15.5vw;
+  font-family: "Roxborough", serif;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.hero_marquee {
+  transform: translateY(-20%);
+  display: flex;
+  align-items: center;
+  column-gap: 3vw;
+}
+
+.hero_bottom {
+  position: absolute;
+  bottom: 0;
+  padding: 0 1.5rem 2rem;
+}
+
+.hero_bottom h1 {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+/*********************** section tagline *************************/
+
+.section_tagline {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1.8rem 8rem;
+  background-color: var(--black);
+}
+
+.tagline_wrapper h1 {
+  color: var(--white);
+  font-size: 5.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: "Roxborough", serif;
+  text-align: center;
+  overflow-y: hidden;
+}
+
+/*********************** section video ********************************/
+
+.section_video {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0 1.8rem;
+  background-color: var(--black);
+}
+
+.video_wrapper video {
+  width: 100%;
+  height: 100%;
+}
+
+/********************** section portfolio ***************************/
+
+.section_portfolio {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--black);
+  padding: 3rem 1.8rem;
+  overflow: hidden;
+}
+
+.portfolio_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio_top-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 2rem;
+  margin: 3rem auto 12rem;
+}
+
+.portfolio_top-wrap span {
+  color: var(--purple);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.portfolio_top-wrap p {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+
+.portfolio_bottom-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+}
+
+.portfolio_row {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.col_image img {
+  object-fit: cover;
+  width: 90%;
+  height: 100%;
+}
+
+.col_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+}
+
+.col_text-wrap {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--white);
+  max-width: 497px;
+}
+
+.top_text {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.top_text p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.top_text-list {
+  display: flex;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
+  opacity: 0.6;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.top_text-list span {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.col_text-wrap h1 {
+  margin-bottom: 1.8rem;
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  font-family: "Roxborough", serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.col_text-wrap p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 397px;
+}
+
+.portfolio_foot-text {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7rem auto 9rem;
+}
+
+.portfolio_foot-text h1 {
+  font-size: 3rem;
+  letter-spacing: 1.3px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/******************* section philosophy **********************/
+
+.section_philosophy {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--black);
+  padding: 3rem 1.8rem;
+}
+
+.philosophy_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 3rem 6rem 12rem;
+  column-gap: 2rem;
+  color: var(--white);
+}
+
+.philosophy_wrapper span {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 300;
+}
+
+.philosophy_wrapper h1 {
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  font-weight: 350;
+  line-height: 1.6;
+}
+
+/*************** section love  *******************/
+
+.section_love {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--black);
+  padding: 3rem 1.8rem;
+}
+
+.love_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.love_wrapper h1 {
+  font-size: 8.5rem;
+  color: var(--purple);
+  font-family: "Roxborough", serif;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/**************** section features **********************/
+
+.section_features {
+  width: 100%;
+  background-color: var(--black);
+  padding: 0 1.8rem;
+}
+
+.features_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  grid-template-rows: auto;
+  padding: 0 6rem;
+  column-gap: 3rem;
+}
+
+.features_content {
+  height: 90vh;
+}
+
+.features_content:last-of-type {
+  height: 70vh;
+}
+
+.features_content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  row-gap: 1.8rem;
+}
+
+.features_content h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: "Roxborough", serif;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.features_content h2 {
+  font-size: 0.85rem;
+  color: var(--white);
+  font-weight: 300;
+}
+
+.features_icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.features_box {
+  border: 1px solid var(--white);
+  border-radius: 1rem;
+  width: 474px;
+  height: 315px;
+  margin: 0 auto;
+}
+
+/********************* section footer  ************************/
+
+.section_footer {
+  width: 100vw;
+  background-color: var(--black);
+  transition: background-color 0.1s;
+  padding: 0 1.8rem;
+  height: 100vh;
+}
+
+.footer_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.footer_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  row-gap: 2.1rem;
+  color: var(--white);
+}
+
+.footer_container p {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--black);
+}
+
+.footer_container h1 {
+  font-size: 5.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--purple);
+  font-family: "Roxborough", serif;
+}
